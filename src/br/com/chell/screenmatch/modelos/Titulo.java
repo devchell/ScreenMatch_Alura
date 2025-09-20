@@ -1,5 +1,6 @@
 package br.com.chell.screenmatch.modelos;
 
+import java.util.Locale;
 
 public class Titulo {
     private String nome;
@@ -7,12 +8,30 @@ public class Titulo {
     private boolean incluidoPremium;
     private double somaDasAvaliacoes;
     private int quantidadeAvaliacao;
+    private int duracaoMinutos;
     private String nomeDiretor;
+
+    public void exibeFichaFilme(){
+        System.out.println("Nome do filme: " + nome);
+        System.out.println("Ano de lançamento: " + anoLancamento);
+        System.out.println("Duração: " + duracaoMinutos + " minutos");
+        System.out.println("Diretor: " + nomeDiretor);
+        System.out.println("Média das avaliações: " + String.format(Locale.US, "%.2f", obterMediaAvaliacao()));
+        System.out.println("Quantidade de avaliação: " + quantidadeAvaliacao);
+        System.out.println("Incluído no plano Premium: " + incluidoPremium);
+    }
+
+
 
     public void avaliaFilme(double nota) {
         somaDasAvaliacoes += nota;
         quantidadeAvaliacao++;
 
+    }
+
+    public void avanliaSerie(double nota){
+        somaDasAvaliacoes += nota;
+        quantidadeAvaliacao++;
     }
 
     public double obterMediaAvaliacao(){
@@ -32,6 +51,10 @@ public class Titulo {
         return incluidoPremium;
     }
 
+    public int getDuracaoMinutos() {
+        return duracaoMinutos;
+    }
+
     public String getNomeDiretor() {
         return nomeDiretor;
     }
@@ -49,6 +72,9 @@ public class Titulo {
         this.incluidoPremium = incluidoPremium;
     }
 
+    public void setDuracaoMinutos(int duracaoMinutos) {
+        this.duracaoMinutos = duracaoMinutos;
+    }
     public void setNomeDiretor(String nomeDiretor) {
         this.nomeDiretor = nomeDiretor;
     }

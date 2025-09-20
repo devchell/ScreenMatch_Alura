@@ -1,23 +1,23 @@
+import br.com.chell.screenmatch.modelos.Serie;
 import br.com.chell.screenmatch.modelos.Titulo;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Titulo filme01 = new Titulo();
+        //Série
+        Serie serie01 = new Serie();
 
-        filme01.setNome("Meu Malvado Favorito");
-        filme01.setAnoLancamento(2010);
-        filme01.setDuracaoMinutos(95);
-        filme01.setIncluidoPremium(true);
-        filme01.setNomeDiretor("João Vitor Rodrigues");
+        serie01.setNome("Supernatural");
+        serie01.setQuantidadeEpisodios(327);
+        serie01.setQuantidadeTemporadas(15);
+        serie01.setAtiva(false);
+        serie01.setAnoLancamento(2005);
+        serie01.setIncluidoPremium(true);
+        serie01.setNomeDiretor("Eric Kripke");
+        serie01.setDuracaoMinutos(35);
 
-        filme01.avaliaFilme(9);
-        filme01.avaliaFilme(7);
-        filme01.avaliaFilme(6.75);
-
-        filme01.exibeFichaTecnica();
-
+        serie01.exibeFichaSerie();
 
     }
 
