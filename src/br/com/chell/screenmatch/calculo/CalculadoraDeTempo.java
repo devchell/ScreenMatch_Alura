@@ -27,7 +27,21 @@ public class CalculadoraDeTempo {
 
     public void exibeFichaLista() {
         if (tempoTotalMinutos < 60) {
-            System.out.println("");
+            System.out.println("Sua lista tem um total de: " + tempoTotalMinutos + " minutos.");
+        } if (tempoTotalMinutos >= 60 && tempoTotalMinutos < 1440) {
+            if (transformaMinutosHoras() == 1) {
+                System.out.println("Sua lista tem um total de: " + tempoTotalMinutos + " minutos | " + transformaMinutosHoras() + " hora.");
+            } else {
+                System.out.println("Sua lista tem um total de: " + tempoTotalMinutos + " minutos | " + transformaMinutosHoras() + " horas.");
+            }
+        } else {
+            if (transformaHorasDias() == 1) {
+                System.out.println("Sua lista tem um total de: " + tempoTotalMinutos + " minutos | " + transformaMinutosHoras() + " horas | "
+                        + transformaHorasDias() + " dia.");
+            } else {
+                System.out.println("Sua lista tem um total de: " + tempoTotalMinutos + " minutos | " + transformaMinutosHoras() + " horas | "
+                        + transformaHorasDias() + " dias.");
+            }
         }
 
     }

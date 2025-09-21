@@ -25,7 +25,7 @@ public class Main {
 
         serie01.exibeFichaSerie();
 
-        System.out.println("\n\n\n");
+        System.out.println("\n");
 
         //Filme
         Filme filme01 = new Filme();
@@ -43,8 +43,12 @@ public class Main {
 
         filme01.exibeFichaFilme();
 
+        System.out.println("\n");
+
         //Calculadora
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(filme01);
+        calculadora.exibeFichaLista();
 
 
     }
