@@ -1,20 +1,19 @@
 package br.com.chell.screenmatch.calculo;
 
-import br.com.chell.screenmatch.modelos.Filme;
-import br.com.chell.screenmatch.modelos.Serie;
+import br.com.chell.screenmatch.modelos.Titulo;
 
 public class CalculadoraDeTempo {
     private int tempoTotalMinutos;
 
-    public int getTempoTotalMinutos() {
-        return tempoTotalMinutos;
-    }
+//    public void inclui(Filme f) {
+//        tempoTotalMinutos += f.pegaDuracaoMinutos();
+//    }
+//    public void inclui(Serie s) {
+//        tempoTotalMinutos += s.pegaDuracaoMinutos();
+//    }
 
-    public void inclui(Filme f) {
-        tempoTotalMinutos += f.pegaDuracaoMinutos();
-    }
-    public void inclui(Serie s) {
-        tempoTotalMinutos += s.pegaDuracaoMinutos();
+    public void inclui(Titulo titulo) {
+        tempoTotalMinutos += titulo.pegaDuracaoMinutos();
     }
 
     public int transformaMinutosHoras() {

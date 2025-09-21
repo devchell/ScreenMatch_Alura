@@ -1,8 +1,10 @@
 package br.com.chell.screenmatch.modelos;
 
+import br.com.chell.screenmatch.calculo.Classificacao;
+
 import java.util.Locale;
 
-public class Filme extends Titulo {
+public class Filme extends Titulo implements Classificacao {
 
     private boolean possuiSaga;
 
@@ -31,5 +33,10 @@ public class Filme extends Titulo {
 
     public void setPossuiSaga(boolean possuiSaga) {
         this.possuiSaga = possuiSaga;
+    }
+
+    @Override
+    public int getClassificacao() {
+        return (int) obterMediaAvaliacao()/2;
     }
 }

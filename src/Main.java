@@ -1,4 +1,6 @@
 import br.com.chell.screenmatch.calculo.CalculadoraDeTempo;
+import br.com.chell.screenmatch.calculo.FiltroRecomendacao;
+import br.com.chell.screenmatch.modelos.Episodio;
 import br.com.chell.screenmatch.modelos.Filme;
 import br.com.chell.screenmatch.modelos.Serie;
 
@@ -48,9 +50,15 @@ public class Main {
         //Calculadora
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
         calculadora.inclui(filme01);
+        calculadora.inclui(serie01);
         calculadora.exibeFichaLista();
 
+        Episodio ep01 = new Episodio();
+        ep01.setTotalVisualizacao(50);
+        System.out.println(ep01.getClassificacao());
 
+        FiltroRecomendacao filtroRecomendacao = new FiltroRecomendacao();
+        filtroRecomendacao.filtra(ep01);
     }
 
 }
