@@ -1,17 +1,68 @@
 package br.com.chell.screenmatch.modelos;
 
+import java.util.Locale;
+
 public class Serie extends Titulo {
     private int quantidadeEpisodios;
     private int quantidadeTemporadas;
     private double minutosPorEpisodio;
     private boolean ativa;
 
-    public double obterMediaTempoEpisodio(){
-        return minutosPorEpisodio * quantidadeEpisodios;
-    }
+    public void exibeFichaSerie(){
+        System.out.println("Nome da Série: " + getNome());
+        System.out.println("Ano de Lançamento: " + getAnoLancamento());
+        System.out.println("Quantidade de Episódios: " + getQuantidadeEpisodios() + " episódios");
+        System.out.println("Quantidade de Temporadas: " + getQuantidadeTemporadas() + " temporadas");
 
-    public double obterMediaTempoTemporadas() {
-        return obterMediaTempoEpisodio() * quantidadeTemporadas;
+        //Duração completa
+        if (pegaDuracaoMinutos() < 60) {
+            System.out.println("Duração completa: " + pegaDuracaoMinutos() + " minutos.");
+        } else if (pegaDuracaoMinutos() >= 60 && pegaDuracaoMinutos() < 1440) {
+            if (pegaMediaTemporadasHoras() == 1){
+                System.out.println("Duração completa: " + pegaDuracaoMinutos() + " minutos | " + pegaMediaTemporadasHoras() +
+                        " hora.");
+            } else {
+                System.out.println("Duração completa: " + pegaDuracaoMinutos() + " minutos | " + pegaMediaTemporadasHoras() +
+                        " horas.");
+            }
+
+        } else {
+            if (pegaDuracaoDias() == 1) {
+                System.out.println("Duração completa: " + pegaDuracaoMinutos() + " minutos | " + pegaDuracaoHoras() +
+                        " horas | " + pegaDuracaoDias() + " dia.");
+            } else {
+                System.out.println("Duração completa: " + pegaDuracaoMinutos() + " minutos | " + pegaDuracaoHoras() +
+                        " horas | " + pegaDuracaoDias() + " dias.");
+            }
+
+        }
+
+        //Média da duração
+        if (pegaMediaTemporadasMinutos() < 60) {
+            System.out.println("Média por temporada: " + pegaMediaTemporadasMinutos() + " minutos.");
+        } else if (pegaMediaTemporadasMinutos() >= 60 && pegaMediaTemporadasMinutos() < 1440) {
+            if (pegaMediaTemporadasHoras() == 1){
+                System.out.println("Média por temporada: " + pegaMediaTemporadasMinutos() + " minutos | " + pegaMediaTemporadasHoras() +
+                        " hora.");
+            } else {
+                System.out.println("Média por temporada: " + pegaMediaTemporadasMinutos() + " minutos | " + pegaMediaTemporadasHoras() +
+                        " horas.");
+            }
+
+        } else {
+            if (pegaMediaTemporadaDias() == 1){
+                System.out.println("Média por temporada: " + pegaMediaTemporadasMinutos() + " minutos | " + pegaMediaTemporadasHoras() +
+                        " horas | " + pegaMediaTemporadaDias() + " dia.");
+            } else {
+                System.out.println("Média por temporada: " + pegaMediaTemporadasMinutos() + " minutos | " + pegaMediaTemporadasHoras() +
+                        " horas | " + pegaMediaTemporadaDias() + " dias.");
+            }
+
+        }
+        System.out.println("Diretor: " + getNomeDiretor());
+        System.out.println("Média das avaliações: " + String.format(Locale.US, "%.2f", obterMediaAvaliacao()));
+        System.out.println("Quantidade de avaliação: " + getQuantidadeAvaliacao());
+        System.out.println("Incluído no plano Premium: " + isIncluidoPremium());
     }
 
     //Getters
@@ -52,7 +103,27 @@ public class Serie extends Titulo {
     }
 
     @Override
-    public int getDuracaoMinutos() {
+    public int pegaDuracaoMinutos() {
         return (int) (quantidadeTemporadas * quantidadeEpisodios * minutosPorEpisodio);
+    }
+
+    public int pegaDuracaoHoras() {
+        return pegaDuracaoMinutos() / 60;
+    }
+
+    public int pegaDuracaoDias() {
+        return pegaDuracaoHoras() / 24;
+    }
+
+    public int pegaMediaTemporadasMinutos() {
+        return pegaDuracaoMinutos() / getQuantidadeTemporadas();
+    }
+
+    public int pegaMediaTemporadasHoras() {
+        return pegaMediaTemporadasMinutos() / 60;
+    }
+
+    public int pegaMediaTemporadaDias() {
+        return pegaMediaTemporadasHoras() / 24;
     }
 }

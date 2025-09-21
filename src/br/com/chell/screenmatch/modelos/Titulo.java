@@ -1,7 +1,5 @@
 package br.com.chell.screenmatch.modelos;
 
-import java.util.Locale;
-
 public class Titulo {
     private String nome;
     private int anoLancamento;
@@ -9,27 +7,15 @@ public class Titulo {
     private double somaDasAvaliacoes;
     private int quantidadeAvaliacao;
     private int duracaoMinutos;
+    private int duracaoHoras;
     private String nomeDiretor;
-
-    public void exibeFichaFilme(){
-        System.out.println("Nome do filme: " + nome);
-        System.out.println("Ano de lançamento: " + anoLancamento);
-        System.out.println("Duração: " + duracaoMinutos + " minutos");
-        System.out.println("Diretor: " + nomeDiretor);
-        System.out.println("Média das avaliações: " + String.format(Locale.US, "%.2f", obterMediaAvaliacao()));
-        System.out.println("Quantidade de avaliação: " + quantidadeAvaliacao);
-        System.out.println("Incluído no plano Premium: " + incluidoPremium);
-    }
-
-
 
     public void avaliaFilme(double nota) {
         somaDasAvaliacoes += nota;
         quantidadeAvaliacao++;
-
     }
 
-    public void avanliaSerie(double nota){
+    public void avaliaSerie(double nota){
         somaDasAvaliacoes += nota;
         quantidadeAvaliacao++;
     }
@@ -51,8 +37,12 @@ public class Titulo {
         return incluidoPremium;
     }
 
-    public int getDuracaoMinutos() {
+    public int pegaDuracaoMinutos() {
         return duracaoMinutos;
+    }
+
+    public int getQuantidadeAvaliacao() {
+        return quantidadeAvaliacao;
     }
 
     public String getNomeDiretor() {
