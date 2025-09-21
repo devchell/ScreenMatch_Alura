@@ -7,7 +7,6 @@ public class Titulo {
     private double somaDasAvaliacoes;
     private int quantidadeAvaliacao;
     private int duracaoMinutos;
-    private int duracaoHoras;
     private String nomeDiretor;
 
     public void avaliaFilme(double nota) {

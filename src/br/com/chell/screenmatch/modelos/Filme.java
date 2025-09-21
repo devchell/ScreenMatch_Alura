@@ -9,7 +9,7 @@ public class Filme extends Titulo {
     public void exibeFichaFilme(){
         System.out.println("Nome do filme: " + getNome());
         System.out.println("Ano de lançamento: " + getAnoLancamento());
-        if (possuiSaga) {
+        if (isPossuiSaga()) {
             System.out.println("Este filme contém uma Saga.");
         } else {
             System.out.println("Este filme não contém uma Saga.");
@@ -23,7 +23,13 @@ public class Filme extends Titulo {
         } else {
             System.out.println("Este filme faz parte do plano: Gratuito.");
         }
-
     }
 
+    public boolean isPossuiSaga() {
+        return possuiSaga;
+    }
+
+    public void setPossuiSaga(boolean possuiSaga) {
+        this.possuiSaga = possuiSaga;
+    }
 }

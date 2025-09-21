@@ -1,3 +1,4 @@
+import br.com.chell.screenmatch.calculo.CalculadoraDeTempo;
 import br.com.chell.screenmatch.modelos.Filme;
 import br.com.chell.screenmatch.modelos.Serie;
 
@@ -33,6 +34,7 @@ public class Main {
         filme01.setDuracaoMinutos(95);
         filme01.setNomeDiretor("Chris Renaud");
         filme01.setIncluidoPremium(true);
+        filme01.setPossuiSaga(true);
 
         filme01.avaliaFilme(7);
         filme01.avaliaFilme(9);
@@ -40,6 +42,10 @@ public class Main {
         filme01.avaliaFilme(8.5);
 
         filme01.exibeFichaFilme();
+
+        //Calculadora
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+
 
     }
 
