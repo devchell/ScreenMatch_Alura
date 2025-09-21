@@ -63,9 +63,9 @@ public class Serie extends Titulo {
         System.out.println("Média das avaliações: " + String.format(Locale.US, "%.2f", obterMediaAvaliacao()));
         System.out.println("Quantidade de avaliação: " + getQuantidadeAvaliacao());
         if (isIncluidoPremium()) {
-            System.out.println("Esta série faz parte do plano: Premium");
+            System.out.println("Esta série faz parte do plano: Premium.");
         } else {
-            System.out.println("Esta séria faz parte do plano: Gratuito");
+            System.out.println("Esta séria faz parte do plano: Gratuito.");
         }
     }
 
