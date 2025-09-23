@@ -9,6 +9,11 @@ public class Titulo {
     private int duracaoMinutos;
     private String nomeDiretor;
 
+    public Titulo(String nome, int anoLancamento) {
+        this.nome = nome;
+        this.anoLancamento = anoLancamento;
+    }
+
     public void avaliaFilme(double nota) {
         somaDasAvaliacoes += nota;
         quantidadeAvaliacao++;

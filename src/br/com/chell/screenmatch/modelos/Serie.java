@@ -8,6 +8,10 @@ public class Serie extends Titulo {
     private double minutosPorEpisodio;
     private boolean ativa;
 
+    public Serie(String nome, int anoLancamento) {
+        super(nome, anoLancamento);
+    }
+
     public void exibeFichaSerie(){
         System.out.println("Nome da Série: " + getNome());
         System.out.println("Ano de Lançamento: " + getAnoLancamento());
@@ -129,5 +133,10 @@ public class Serie extends Titulo {
 
     public int pegaMediaTemporadaDias() {
         return pegaMediaTemporadasHoras() / 24;
+    }
+
+    @Override
+    public String toString() {
+        return "Série: " + this.getNome() + " (" + this.getAnoLancamento() + ")";
     }
 }

@@ -8,8 +8,6 @@ public class Episodio implements Classificacao {
     private Serie serie;
     private int totalVisualizacao;
 
-
-
     //Getters & Setters
     public void setTotalVisualizacao(int totalVisualizacao) {
         this.totalVisualizacao = totalVisualizacao;

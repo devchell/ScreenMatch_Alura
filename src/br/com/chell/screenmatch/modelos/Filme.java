@@ -8,6 +8,17 @@ public class Filme extends Titulo implements Classificacao {
 
     private boolean possuiSaga;
 
+    public Filme(String nome, int anoLancamento) {
+        super(nome, anoLancamento);
+    }
+
+//    public Filme(String nome) {
+//        this.setNome(nome);
+//    }
+
+//    public Filme() { (Pode utilizar sem passar um parâmetro)
+//    }
+
     public void exibeFichaFilme(){
         System.out.println("Nome do filme: " + getNome());
         System.out.println("Ano de lançamento: " + getAnoLancamento());
@@ -27,6 +38,8 @@ public class Filme extends Titulo implements Classificacao {
         }
     }
 
+
+
     public boolean isPossuiSaga() {
         return possuiSaga;
     }
@@ -39,6 +52,7 @@ public class Filme extends Titulo implements Classificacao {
     public int getClassificacao() {
         return (int) obterMediaAvaliacao()/2;
     }
+
 
     @Override
     public String toString() {
