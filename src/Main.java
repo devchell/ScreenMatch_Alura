@@ -4,6 +4,8 @@ import br.com.chell.screenmatch.modelos.Episodio;
 import br.com.chell.screenmatch.modelos.Filme;
 import br.com.chell.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -54,11 +56,32 @@ public class Main {
         calculadora.exibeFichaLista();
 
         Episodio ep01 = new Episodio();
-        ep01.setTotalVisualizacao(50);
-        System.out.println(ep01.getClassificacao());
+        ep01.setTotalVisualizacao(101);
+        System.out.println("Avaliação: " + ep01.getClassificacao());
 
         FiltroRecomendacao filtroRecomendacao = new FiltroRecomendacao();
+        System.out.print("Status: ");
         filtroRecomendacao.filtra(ep01);
+
+        var filme02 = new Filme();
+        filme02.setNome("O Estrangeiro");
+        filme02.setAnoLancamento(2017);
+        filme02.setDuracaoMinutos(113);
+        filme02.setNomeDiretor("Martin Campbell");
+        filme02.setIncluidoPremium(true);
+        filme02.setPossuiSaga(false);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filme01);
+        listaDeFilmes.add(filme02);
+
+        System.out.println("Tamanho da lista: " + listaDeFilmes.size());
+                                                            //get(0)
+        System.out.println("Primeiro Filme: " + listaDeFilmes.getFirst().getNome());
+
+        System.out.println(listaDeFilmes);
+
+        System.out.println(listaDeFilmes.getFirst().toString());
     }
 
 }
