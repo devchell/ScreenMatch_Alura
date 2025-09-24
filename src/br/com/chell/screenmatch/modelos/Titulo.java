@@ -1,6 +1,6 @@
 package br.com.chell.screenmatch.modelos;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo> {
     private String nome;
     private int anoLancamento;
     private boolean incluidoPremium;
@@ -71,5 +71,10 @@ public class Titulo {
     }
     public void setNomeDiretor(String nomeDiretor) {
         this.nomeDiretor = nomeDiretor;
+    }
+
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
     }
 }
